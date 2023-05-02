@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Gradient accumulation principleDuring deep learning training, the batch size of the data is limited by the GPU memory, and the batch size affects the final accuracy of the model and the performance of">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gradient accumulation principle">
+<meta property="og:url" content="https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/index.html">
+<meta property="og:site_name" content="Jerry Yan&#39;s Homepage">
+<meta property="og:description" content="Gradient accumulation principleDuring deep learning training, the batch size of the data is limited by the GPU memory, and the batch size affects the final accuracy of the model and the performance of">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-02T08:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-02T08:30:22.071Z">
+<meta property="article:author" content="Jerry">
+<meta property="article:tag" content="Fundamental AI">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Gradient accumulation principle</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/JerryYan24">Projects</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/04/02/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&text=Gradient accumulation principle"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&is_video=false&description=Gradient accumulation principle"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Gradient accumulation principle&body=Check out this article: https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&name=Gradient accumulation principle&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&t=Gradient accumulation principle"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradient-accumulation-principle"><span class="toc-number">1.</span> <span class="toc-text">Gradient accumulation principle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Role-of-Batch-size"><span class="toc-number">1.1.</span> <span class="toc-text">Role of Batch size</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Impact-of-Batch-size-on-memory"><span class="toc-number">1.2.</span> <span class="toc-text">Impact of Batch size on memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ways-to-use-large-Batch-sizes"><span class="toc-number">1.3.</span> <span class="toc-text">Ways to use large Batch sizes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradient-accumulation-principle-1"><span class="toc-number">1.4.</span> <span class="toc-text">Gradient accumulation principle</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Gradient accumulation principle
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jerry</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-02T08:00:00.000Z" itemprop="datePublished">2023-05-02</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Fundamental-AI/" rel="tag">Fundamental AI</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Gradient-accumulation-principle"><a href="#Gradient-accumulation-principle" class="headerlink" title="Gradient accumulation principle"></a>Gradient accumulation principle</h1><p>During deep learning training, the batch size of the data is limited by the GPU memory, and the batch size affects the final accuracy of the model and the performance of the training process. As the model gets larger and larger with constant GPU memory, this means that the batch size of the data can only be reduced, and this is where Gradient Accumulation can be a simple solution to the problem.</p>
+<h2 id="Role-of-Batch-size"><a href="#Role-of-Batch-size" class="headerlink" title="Role of Batch size"></a>Role of Batch size</h2><p>The Batch size of the training data has a key impact on the convergence of the training process and ultimately the accuracy of the trained model. Typically, there is an optimal value or range of values for the Batch size of each neural network and dataset.</p>
+<blockquote>
+<p>Different neural networks and different datasets may have different optimal Batch size.</p>
+</blockquote>
+<p>There are two main issues to consider when choosing a Batch size:</p>
+<p><strong>Generalization</strong>: a large Batch size may fall into a local minimum. Falling into a local minimum means that the neural network will perform well on samples outside the training set, a process called generalization. Therefore, generalization generally indicates over-fitting.</p>
+<p><strong>Convergence speed</strong>: A small Batch size may lead to slow convergence of the algorithm learning. The update of the network model at each Batch will determine the starting point for the next Batch update. Each Batch trains the dataset and randomly draws training samples, so the resulting gradient is based on a partial estimate of the data noise. The fewer samples used in a single Batch, the less accurate the gradient estimation will be. In other words, a smaller Batch size may make the learning process more volatile, essentially lengthening the time it takes for the algorithm to converge.</p>
+<h2 id="Impact-of-Batch-size-on-memory"><a href="#Impact-of-Batch-size-on-memory" class="headerlink" title="Impact of Batch size on memory"></a>Impact of Batch size on memory</h2><p>While traditional computers have access to a large amount of RAM on top of the CPU, they can also make use of SSDs for secondary caching or virtual caching mechanisms. But the memory on an AI accelerator chip such as a GPU is much less. This is where the size of the training data Batch size has a significant impact on the GPU’s memory.</p>
+<p>To understand this further, let us first examine the contents of the memory on the AI chip during training:</p>
+<ul>
+<li>Model parameters: the weight parameters and biases that the network model needs to use.</li>
+<li>Optimizer variables: variables needed by the optimizer algorithm, e.g. momentum momentum.</li>
+<li>Intermediate computation variables: intermediate values generated by the network model computation, which are temporarily stored in the memory of the AI accelerator chip, e.g. the output of each activation layer.</li>
+<li>Workspace: Local variables that are used by the kernel implementation of the AI accelerator chip and are generated in temporary memory, e.g. the local variables generated by the calculation of B&#x2F;C in the operator D&#x3D;A+B&#x2F;C.</li>
+</ul>
+<p>Therefore, a larger Batch size means that more samples are needed for the training of the neural network, resulting in a proliferation of variables that need to be stored in the AI chip’s memory. In many cases, there is not enough AI accelerator chip memory, and setting the Batch size too large results in an OOM error (Out Off Memory).</p>
+<h2 id="Ways-to-use-large-Batch-sizes"><a href="#Ways-to-use-large-Batch-sizes" class="headerlink" title="Ways to use large Batch sizes"></a>Ways to use large Batch sizes</h2><p>One way to address the memory limitations of AI accelerator chips and run large Batch sizes is to split the Batch of a data Sample into smaller Batches called Mini-Batches. these small Mini-Batches can run independently and average or sum the gradients while the network model is being trained. There are two main ways to implement this.</p>
+<ol>
+<li><p>Data parallelism: Use multiple AI accelerator chips to train all Mini-Batches in parallel, with each copy of data on a single AI accelerator chip. The gradients of all Mini-Batches are accumulated and the results are used to sum and update the network parameters at the end of each Epoch.</p>
+</li>
+<li><p>Gradient accumulation: Mini-Batch is executed sequentially while the gradients are accumulated, and the accumulated results are averaged to update the model variables after the last Mini-Batch is calculated.</p>
+</li>
+</ol>
+<p>Although both techniques are quite similar and solve the problem of memory not being able to execute larger Batch sizes, gradient accumulation can be done using a single AI accelerator chip, whereas data parallelism requires multiple AI accelerator chips, so students who only have a 12G used card on hand should hurry up and put gradient accumulation to use.</p>
+<h2 id="Gradient-accumulation-principle-1"><a href="#Gradient-accumulation-principle-1" class="headerlink" title="Gradient accumulation principle"></a>Gradient accumulation principle</h2><p>Gradient accumulation is a way of training a neural network in which samples of the data Sample are split into several smaller Batches by Batch and then computed in sequence.</p>
+<p>Before discussing gradient accumulation further, let’s look at the computational process of a neural network.</p>
+<p>The deep learning model consists of a number of interconnected neural network units, and the sample data is propagated forward through all the neural network layers. After passing through all the layers, the network model outputs the predicted values of the samples, passes through the loss function and then calculates the loss value (error) for each sample. The neural network is back-propagated to calculate the gradient of the loss values relative to the model parameters. Finally this gradient information is used to make updates to the parameters in the network model.</p>
+<p>The mathematical formula used by the optimizer to update the parameters of the model weights of the network model. Take a simple stochastic gradient descent (SGD) algorithm as an example. Assume that the Loss Function function is formulated as<br>$$<br>\operatorname{Loss}(\theta)&#x3D;\frac{1}{2}\left(h\left(x^k\right)-y^k\right)^2<br>$$<br>In building the model, the optimizer is used to calculate the algorithm that minimizes the losses. Here the SGD algorithm uses the Loss function to update the weighting parameters as follows<br>$$<br>\theta i&#x3D;\theta_{i-1}-l r * \operatorname{grad}_i<br>$$<br>Theta is the trainable parameters (weights or biases) in the network model, lr is the learning rate and grad is the loss relative to the parameters of the network model.</p>
+<p>Gradient accumulation is the calculation of the neural network model, but does not update the parameters of the network model in time, while accumulating the gradient information obtained during the calculation, and finally using the accumulated gradients to update the parameters uniformly.<br>$$<br>\text { accumulated }&#x3D;\sum_{i&#x3D;0}^N \text { grad }_i<br>$$<br>In not updating the model variables, the original data Batch is actually split into several smaller Mini-Batches, and the samples used in each step are actually smaller data sets.</p>
+<p>By not updating the variables within N-steps, so that all Mini-Batches use the same model variables to calculate the gradient, to ensure that the same gradient and weight information is obtained from the calculation, the algorithmic equivalent is to use the same size of the original unsliced Batch. That is:<br>$$<br>\theta i&#x3D;\theta_{i-1}-l r * \sum_{i&#x3D;0}^N g r a d_i<br>$$<br>Ultimately accumulating the gradients in the above step will produce a sum of gradients of the same size as using the global Batch size.</p>
+<p>In practical engineering, of course, there are two points to note about the tuning and algorithms:</p>
+<p><strong>Learning rate</strong>: Under certain conditions, the larger the Batch size, the better the training effect, gradient accumulation simulates the effect of increasing the Batch size.</p>
+<p><strong>Batch Norm</strong>: Batch size simulation when accumulation steps is 4. Compared with the real Batch size, the distribution of the data is not exactly the same, and the mean and variance calculated by BN with 4 times the Batch size are not quite the same as the actual data mean and variance. Some implementations use Group Norm instead of Batch Norm.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/JerryYan24">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradient-accumulation-principle"><span class="toc-number">1.</span> <span class="toc-text">Gradient accumulation principle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Role-of-Batch-size"><span class="toc-number">1.1.</span> <span class="toc-text">Role of Batch size</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Impact-of-Batch-size-on-memory"><span class="toc-number">1.2.</span> <span class="toc-text">Impact of Batch size on memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ways-to-use-large-Batch-sizes"><span class="toc-number">1.3.</span> <span class="toc-text">Ways to use large Batch sizes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradient-accumulation-principle-1"><span class="toc-number">1.4.</span> <span class="toc-text">Gradient accumulation principle</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&text=Gradient accumulation principle"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&is_video=false&description=Gradient accumulation principle"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Gradient accumulation principle&body=Check out this article: https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&title=Gradient accumulation principle"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&name=Gradient accumulation principle&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://jerryyan24.github.io/2023/05/02/Gradient%20accumulation%20principle/&t=Gradient accumulation principle"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    Jerry
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/JerryYan24">Projects</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
