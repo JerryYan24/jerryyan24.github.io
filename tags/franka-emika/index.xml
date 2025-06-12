@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Franka Emika on JerryYan&#39;s Web</title>
+    <link>https://jerryyan24.github.io/tags/franka-emika/</link>
+    <description>Recent content in Franka Emika on JerryYan&#39;s Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Jerry Yan</copyright>
+    <lastBuildDate>Sat, 22 Feb 2025 13:06:38 +0800</lastBuildDate><atom:link href="https://jerryyan24.github.io/tags/franka-emika/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>libfranka Example Code: Unable to Set Realtime Scheduling – Operation Not Permitted</title>
+      <link>https://jerryyan24.github.io/posts/libfranka-example-code-realtime-scheduling-error/</link>
+      <pubDate>Sat, 22 Feb 2025 13:06:38 +0800</pubDate>
+      
+      <guid>https://jerryyan24.github.io/posts/libfranka-example-code-realtime-scheduling-error/</guid>
+      <description>When running the following command:
+./communication_test 172.16.0.2 You might encounter this error:
+ unable to set realtime scheduling: Operation not permitted Solution
+ To resolve this, simply add sudo before the command:
+sudo ./communication_test 172.16.0.2 Error in ROS Launch Example
+When running another example using ROS launch:
+roslaunch franka_example_controllers move_to_start.launch robot_ip:=172.16.0.2 The same error appears:
+ unable to set realtime scheduling: Operation not permitted
+ Why Does This Happen?
+The real-time kernel requires sudo privileges.</description>
+    </item>
+    
+  </channel>
+</rss>

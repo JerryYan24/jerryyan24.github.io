@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="js no-touch  progressive-image  no-reduced-motion progressive" lang="en">
+  <head>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="keyword" content=""><meta property="og:title" content="libfranka Example Code: Unable to Set Realtime Scheduling – Operation Not Permitted" />
+<meta property="og:description" content="libfranka Example Code: Unable to Set Realtime Scheduling – Operation Not Permitted" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jerryyan24.github.io/posts/libfranka-example-code-realtime-scheduling-error/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-02-22T13:06:38+08:00" />
+<meta property="article:modified_time" content="2025-02-22T13:06:38+08:00" />
+
+<title>libfranka Example Code: Unable to Set Realtime Scheduling – Operation Not Permitted</title>
+
+    <link rel="canonical" href="/posts/libfranka-example-code-realtime-scheduling-error/">
+
+    <link rel="stylesheet" href="/css/global.css">
+
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <link rel="stylesheet" href="/css/search.css" />
+
+    
+    
+
+    
+    
+
+</head>
+  </head>
+  <body class=" page-article    theme-dark ">
+    <header>
+      <nav class="nav">
+  <div class="nav-wrapper">
+    <div class="nav-content-wrapper">
+      <div class="nav-content">
+        <a href="/ " class="nav-title">JerryYan&#39;s Web</a>
+        <div class="nav-menu">
+          <div class="nav-item-wrapper">
+            <a href="/posts " class="nav-item-content">Articles</a>
+          </div>
+          <div class="nav-item-wrapper">
+            <a href="/blog" class="nav-item-content">Blog</a>
+          </div><div class="nav-item-wrapper">
+            <a href="/" class="nav-item-content">About</a>
+          </div><div class="nav-item-wrapper">
+            <a href="/index.xml" class="nav-item-content" target="_blank">RSS</a>
+          </div></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  function toggleSearchModal(){
+    const template = `
+    <div class="modal-body">
+      <div id="autocomplete" onclick="event.stopPropagation();"></div>
+    </div>
+    `
+    const modal = document.querySelector("#modal-wrapper")
+    if(!modal){
+      const div = document.createElement("div")
+      document.body.setAttribute("style","overflow: hidden;")
+      div.setAttribute("id", "modal-wrapper")
+      div.setAttribute("onclick", "toggleSearchModal()")
+      div.innerHTML = template
+      const script = document.createElement("script");script.setAttribute("src", "https://jerryyan24.github.io/js/algolia.js")
+      div.appendChild(script)
+      document.body.append(div)
+    } else {
+      document.body.removeAttribute("style")
+      document.body.removeChild(modal)
+    }
+  }
+</script>
+    </header>
+    
+  
+  
+  <main id="main" class="main">
+      <section>
+        <article class="article">
+          
+          <div class=" article-header ">
+            <div class="category component">
+              <div class="component-content">
+                <div class="category-eyebrow">
+                  <span class="category-eyebrow__category category_original">
+                    
+                      
+                        Franka Emika
+                      
+                    
+                  </span>
+                  <span class="category-eyebrow__date">February 22, 2025</span>
+                </div>
+              </div>
+            </div>
+            <div class="pagetitle component">
+              <div class="component-content">
+                <h1 class="hero-headline">libfranka Example Code: Unable to Set Realtime Scheduling – Operation Not Permitted</h1>
+              </div>
+            </div>
+            <div class="component  article-subhead ">
+              <div class="component-content">libfranka Example Code: Unable to Set Realtime Scheduling – Operation Not Permitted</div>
+            </div>
+
+            <div class="tagssheet component">
+              <div class="component-content">
+                
+                  
+                  <a href="/tags/franka-emika" class="tag">
+                    Franka Emika
+                  </a>
+                
+                  
+                  <a href="/tags/libfranka" class="tag">
+                    libfranka
+                  </a>
+                
+                  
+                  <a href="/tags/c&#43;&#43;" class="tag">
+                    C&#43;&#43;
+                  </a>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="pagebody">
+            
+            
+            
+            
+            
+            
+            
+            
+            <p class="component-content component">When running the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./communication_test 172.16.0.2
+</code></pre></div><p class="component-content component">You might encounter this error:</p>
+<blockquote>
+<p class="component-content component">unable to set realtime scheduling: Operation not permitted
+Solution</p>
+</blockquote>
+<p class="component-content component">To resolve this, simply add sudo before the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ./communication_test 172.16.0.2
+</code></pre></div><p class="component-content component">Error in ROS Launch Example</p>
+<p class="component-content component">When running another example using ROS launch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">roslaunch franka_example_controllers move_to_start.launch robot_ip:<span style="color:#f92672">=</span>172.16.0.2
+</code></pre></div><p class="component-content component">The same error appears:</p>
+<blockquote>
+<p class="component-content component">unable to set realtime scheduling: Operation not permitted</p>
+</blockquote>
+<p class="component-content component">Why Does This Happen?</p>
+<p class="component-content component">The real-time kernel requires sudo privileges. However, when launching a ROS file using roslaunch, there is no direct way to add sudo to the internal commands.</p>
+
+<div class="component-content pagebody component">
+  <h2 id="alternative-solution-use-root-mode" class="pagebody-header">
+    Alternative Solution: Use Root Mode
+  </h2>
+</div><p class="component-content component">Instead of adding sudo manually for each command, enter root mode and execute the launch file directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su
+</code></pre></div><p class="component-content component">Enter your root password when prompted</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">roslaunch franka_example_controllers move_to_start.launch robot_ip:<span style="color:#f92672">=</span>172.16.0.2
+</code></pre></div><p class="component-content component">Once in root mode, you no longer need sudo for the communication_test command. You can simply run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./communication_test 172.16.0.2
+</code></pre></div><p class="component-content component">This ensures the robotic arm functions correctly.</p>
+<p class="component-content component">How to Enter Root Mode</p>
+<p class="component-content component">To switch to root mode, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su
+</code></pre></div><p class="component-content component">You&rsquo;ll be prompted to enter the root password.</p>
+<p class="component-content component">If You Haven’t Set a Root Password Before
+First, set a new root password with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo passwd root
+</code></pre></div><p class="component-content component">Then, enter root mode with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su
+</code></pre></div><p class="component-content component">Now, you should be able to run libfranka’s examples without issues.</p>
+
+          </div><div class="component">
+            <div class="component-content">
+              <div class="article-copyright">
+                <p class="content">
+                  Copyright: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>
+                </p>
+                <p class="content">Author:  Jerry </p>
+                <p class="content">Posted on:  February 22, 2025</p>
+              </div>
+            </div>
+          </div></article>
+      </section>
+  </main>
+
+  <script>
+    var script = document.createElement("script");script.src = "https://jerryyan24.github.io/js/initPost.js";
+    document.head.appendChild(script);
+  </script>
+
+    
+    <div class="footer-main  footer-dark ">
+  <div class="content-body footer-wraper">
+    <div class="footer-box">
+      <div class="foot-nav">
+        <div class="foot-nav-items">
+          <div class="item">
+            <div class="logo"></div>
+            <div class="email">Email: <a href="mailto:jerryyan24@outlook.com">jerryyan24@outlook.com</a></div>
+          </div>
+
+          <div class="item community">
+            <div class="item-title">Social Media</div>
+            
+              <a href="https://github.com/jerryyan24" target="_blank">Github</a>
+            
+          </div>
+
+          <div class="item resources">
+            <div class="item-title">Related</div>
+            
+              <a href="https://yufengbiji.com/" target="_blank">驭风笔记</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="item copyright">
+          &copy; 2025
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://github.com/floyd-li/hugo-theme-itheme" target="_blank">iTheme</a> & <a href="https://github.com/jerryyan24" target="_blank">Jerry</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+    
+    
+
+    
+    
+</html>
