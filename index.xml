@@ -16,13 +16,13 @@
       <guid>https://jerryyan24.github.io/posts/libfranka-example-code-realtime-scheduling-error/</guid>
       <description>When running the following command:
 ./communication_test 172.16.0.2 You might encounter this error:
- unable to set realtime scheduling: Operation not permitted Solution
- To resolve this, simply add sudo before the command:
+unable to set realtime scheduling: Operation not permitted Solution
+To resolve this, simply add sudo before the command:
 sudo ./communication_test 172.16.0.2 Error in ROS Launch Example
 When running another example using ROS launch:
 roslaunch franka_example_controllers move_to_start.launch robot_ip:=172.16.0.2 The same error appears:
- unable to set realtime scheduling: Operation not permitted
- Why Does This Happen?
+unable to set realtime scheduling: Operation not permitted
+Why Does This Happen?
 The real-time kernel requires sudo privileges.</description>
     </item>
     
@@ -41,7 +41,8 @@ The real-time kernel requires sudo privileges.</description>
       <pubDate>Mon, 20 Mar 2023 13:06:38 +0800</pubDate>
       
       <guid>https://jerryyan24.github.io/posts/mark-down-syntax/</guid>
-      <description>Headings  # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6  H1   H2   H3   H4   H5   H6   Image  Image - Wide ![Image Wide|wide](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Big ![Image Big|big](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Inline ![Image Inline|inline](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg)     Image Wide         Image Big         Image Inline     Block Quotes  &amp;gt; You are young and life is long - Pink Floyd   You are young and life is long - Pink Floyd</description>
+      <description>Headings # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 H1 H2 H3 H4 H5 H6 Image Image - Wide ![Image Wide|wide](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Big ![Image Big|big](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Inline ![Image Inline|inline](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image Wide Image Big Image Inline Block Quotes &amp;gt; You are young and life is long - Pink Floyd You are young and life is long - Pink Floyd
+Code Blocks ```javascript function say() { const greeting = &amp;#34;I&amp;#39;ll see you on the dark side of the moon&amp;#34;; console.</description>
     </item>
     
     <item>

@@ -16,13 +16,13 @@
       <guid>https://jerryyan24.github.io/posts/libfranka-example-code-realtime-scheduling-error/</guid>
       <description>When running the following command:
 ./communication_test 172.16.0.2 You might encounter this error:
- unable to set realtime scheduling: Operation not permitted Solution
- To resolve this, simply add sudo before the command:
+unable to set realtime scheduling: Operation not permitted Solution
+To resolve this, simply add sudo before the command:
 sudo ./communication_test 172.16.0.2 Error in ROS Launch Example
 When running another example using ROS launch:
 roslaunch franka_example_controllers move_to_start.launch robot_ip:=172.16.0.2 The same error appears:
- unable to set realtime scheduling: Operation not permitted
- Why Does This Happen?
+unable to set realtime scheduling: Operation not permitted
+Why Does This Happen?
 The real-time kernel requires sudo privileges.</description>
     </item>
     
