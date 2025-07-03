@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jerryyan24.github.io/tags/hiking/</loc>
+    <lastmod>2025-06-28T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jerryyan24.github.io/</loc>
+    <lastmod>2025-06-28T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jerryyan24.github.io/posts/</loc>
+    <lastmod>2025-06-28T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jerryyan24.github.io/tags/san-diego/</loc>
+    <lastmod>2025-06-28T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jerryyan24.github.io/posts/june-28-hiking/</loc>
+    <lastmod>2025-06-28T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jerryyan24.github.io/tags/</loc>
+    <lastmod>2025-06-28T22:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://jerryyan24.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2025-02-22T13:06:38+08:00</lastmod>
   </url><url>
     <loc>https://jerryyan24.github.io/tags/franka-emika/</loc>
     <lastmod>2025-02-22T13:06:38+08:00</lastmod>
   </url><url>
-    <loc>https://jerryyan24.github.io/</loc>
-    <lastmod>2025-02-22T13:06:38+08:00</lastmod>
-  </url><url>
     <loc>https://jerryyan24.github.io/tags/libfranka/</loc>
     <lastmod>2025-02-22T13:06:38+08:00</lastmod>
   </url><url>
     <loc>https://jerryyan24.github.io/posts/libfranka-example-code-realtime-scheduling-error/</loc>
-    <lastmod>2025-02-22T13:06:38+08:00</lastmod>
-  </url><url>
-    <loc>https://jerryyan24.github.io/posts/</loc>
-    <lastmod>2025-02-22T13:06:38+08:00</lastmod>
-  </url><url>
-    <loc>https://jerryyan24.github.io/tags/</loc>
     <lastmod>2025-02-22T13:06:38+08:00</lastmod>
   </url><url>
     <loc>https://jerryyan24.github.io/tags/demo/</loc>
