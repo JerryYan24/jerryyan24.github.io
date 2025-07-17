@@ -1,6 +1,6 @@
 (() => {
   // ns-params:@params
-  var baseURL = "https://jerryyan24.github.io";
+  var baseURL = "https://jerryyan24.github.io/";
   var params = { blogroll: [{ name: "\u9A6D\u98CE\u7B14\u8BB0", url: "https://yufengbiji.com/" }], defaultcover: "https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg", email: "jerryyan24@outlook.com", showcopyright: true, showmore: true, showrss: true, socialmedia: [{ name: "Github", url: "https://github.com/jerryyan24" }] };
 
   // <stdin>

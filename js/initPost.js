@@ -1,6 +1,6 @@
 (() => {
   // ns-params:@params
-  var params_default = { baseURL: "https://jerryyan24.github.io" };
+  var params_default = { baseURL: "https://jerryyan24.github.io/" };
 
   // <stdin>
   var scriptMd5 = document.createElement("script");
