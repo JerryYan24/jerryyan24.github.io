@@ -1,0 +1,4 @@
+/* Keep the existing /about/ appearance while sharing homepage components. */
+.publication-links { margin-top: 0; }
+.pub-link { margin-right: 0; display: inline; }
+.pub-link.github { background: rgb(36, 41, 47); }
