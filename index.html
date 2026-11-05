@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html class="js no-touch  progressive-image  no-reduced-motion progressive" lang="en">
+<html class="single-page js no-touch  progressive-image  no-reduced-motion progressive" lang="en">
   <head>
 	<meta name="generator" content="Hugo 0.118.2">
         <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <meta name="keyword" content=""><meta property="og:title" content="JerryYan&#39;s Homepage" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jerryyan24.github.io/" />
-<title>JerryYan&#39;s Homepage</title>
+    <meta name="keyword" content="">
+
+    
+    
+    <meta name="description" content="Rui Yan is a Robotics Ph.D. student at Georgia Tech, working on robot learning, manipulation, and practical robotic systems.">
+    <meta property="og:title" content="Rui Yan · Robotics">
+    <meta property="og:description" content="Rui Yan is a Robotics Ph.D. student at Georgia Tech, working on robot learning, manipulation, and practical robotic systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jerryyan24.github.io/">
+    <meta property="og:image" content="https://jerryyan24.github.io/images/profile.jpg">
+    <meta property="og:image:alt" content="Rui Yan">
+    <meta name="twitter:card" content="summary">
+    
+
+    <title>Rui Yan · Robotics</title>
 
     <link rel="canonical" href="/">
 
@@ -29,121 +39,107 @@
 
 
 
-<link rel="stylesheet" href="/css/home.css">
 
-
+<link rel="stylesheet" href="/css/home-refined.42a18972017201c906f50a971b7508411c7ff387225a3be2d54b091e5c76c91b.css">
 
   </head>
-  <body class=" page-landing   ">
+  <body class="home-refined  page-landing   ">
     <header>
-      <nav class="nav">
-  <div class="nav-wrapper">
-    <div class="nav-content-wrapper">
-      <div class="nav-content">
-        <a href="/ " class="nav-title">JerryYan&#39;s Homepage</a>
-        <div class="nav-menu">
-          <div class="nav-item-wrapper">
-            <a href="/posts " class="nav-item-content">Articles</a>
-          </div>
-          <div class="nav-item-wrapper">
-            <a href="/blog" class="nav-item-content">Blog</a>
-          </div><div class="nav-item-wrapper">
-            <a href="/" class="nav-item-content">About</a>
-          </div><div class="nav-item-wrapper">
-            <a href="/index.xml" class="nav-item-content" target="_blank">RSS</a>
-          </div></div>
-      </div>
-    </div>
+      <a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="home-nav page-width" aria-label="Main navigation">
+  <a class="home-wordmark" href="#main-content" aria-label="Rui Yan — back to top">Rui Yan<span class="wordmark-dot" aria-hidden="true">.</span><span class="wordmark-role">Robotics researcher</span></a>
+  <div class="home-nav-links">
+    <a href="#about" aria-current="location">About</a>
+    <a href="#publications">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
   </div>
+  <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↓</span></a>
 </nav>
+<script src="/js/home-navigation.d43a50a33d7ac846f40cba7aea11ce082461a5c2ab186c210a900f100515cb7c.js" defer></script>
 
-<script>
-  function toggleSearchModal(){
-    const template = `
-    <div class="modal-body">
-      <div id="autocomplete" onclick="event.stopPropagation();"></div>
-    </div>
-    `
-    const modal = document.querySelector("#modal-wrapper")
-    if(!modal){
-      const div = document.createElement("div")
-      document.body.setAttribute("style","overflow: hidden;")
-      div.setAttribute("id", "modal-wrapper")
-      div.setAttribute("onclick", "toggleSearchModal()")
-      div.innerHTML = template
-      const script = document.createElement("script");script.setAttribute("src", "https://jerryyan24.github.io/js/algolia.js")
-      div.appendChild(script)
-      document.body.append(div)
-    } else {
-      document.body.removeAttribute("style")
-      document.body.removeChild(modal)
-    }
-  }
-</script>
     </header>
     
-<div class="about-wrapper">
-    <div class="about-container">
-        <div class="profile-section">
-            <div class="profile-info">
-                <h1 class="profile-name">Rui Yan</h1>
-                <div class="profile-email">ryan91@gatech.edu</div>
-                <div class="profile-office">Office: GTMI 377</div>
-                <div class="profile-intro">I am a first-year Ph.D. student in Robotics at Georgia Tech, advised by Prof. <a href="https://me.gatech.edu/faculty/zhao">Ye Zhao</a>. I received my M.S. in Electrical and Computer Engineering from UC San Diego, advised by Prof. <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>. I previously worked with Prof. <a href="https://faculty.cqu.edu.cn/FeiLiu/en/more/325595/jsjjgd/index.htm">Fei Liu</a> and Prof. <a href="https://mypage.cuhk.edu.cn/academics/yutianshu/">Tianshu Yu</a>. I am interested in building practical and deployable robotic systems that bridge research and real-world industrial applications.</div>
-                
-                <div class="social-links">
-                    <a href="https://github.com/jerryyan24" target="_blank" class="social-link">GitHub</a>
-                    <a href="https://scholar.google.com/citations?user=8TytuLgAAAAJ&amp;hl=en" target="_blank" class="social-link">Google Scholar</a>
-                    <a href="https://twitter.com/Hi_Im_RuiYan" target="_blank" class="social-link">Twitter</a>
-                    
-                </div>
-                
-            </div>
-            <div class="profile-image">
-                
-                <img src="/images/profile.jpg" alt="Profile Picture" class="avatar">
-                
-            </div>
-        </div>
+<main class="home-page" id="main-content" tabindex="-1">
+
+<section class="intro-hero page-width" aria-labelledby="profile-name">
+  <div class="hero-copy">
+    <p class="eyebrow">Robotics · Georgia Tech</p>
+    <h1 id="profile-name">Rui Yan</h1>
+    <p class="hero-statement">Building robots for<br>the real world.</p>
+    <p class="hero-summary">I work on practical, deployable robotic systems that bridge research and real-world industrial applications.</p>
+    <div class="hero-actions">
+      <a class="primary-action" href="#publications">Explore my research <span aria-hidden="true">↓</span></a>
+      <a class="text-action" href="mailto:ryan91@gatech.edu">Get in touch <span aria-hidden="true">↗</span></a>
     </div>
-</div>
-
-<div class="news-section">
-  <h2 class="section-title">News</h2>
-  <div class="news-grid">
-    
-    <div class="news-item">[Aug 2026] Started my Ph.D. in Robotics at <a href="https://www.gatech.edu">Georgia Tech</a>, advised by Prof. <a href="https://me.gatech.edu/faculty/zhao">Ye Zhao</a>.</div>
-    
-    <div class="news-item">[Jun 2025] Gave a talk and presented a demo at the <a href="https://rss-hardware-intelligence.github.io">1st RSS Workshop on Robot Hardware-Aware Intelligence</a>.</div>
-    
-    <div class="news-item">[Nov 2024] Started my M.S. in Electrical and Computer Engineering at <a href="https://ucsd.edu">UC San Diego</a>.</div>
-    
-    <div class="news-item">[Jun 2024] Graduated from <a href="https://cqu.edu.cn">Chongqing University</a>.</div>
-    
   </div>
-</div>
-
-
-<div class="publications-section">
-  <h2 class="section-title">Publications</h2>
-  <div class="publications-grid">
-    
+  <figure class="hero-portrait">
+    <img src="/images/profile.jpg" alt="Rui Yan" width="280" height="350" fetchpriority="high">
+    <figcaption>Ph.D. student in Robotics<span>Georgia Institute of Technology</span></figcaption>
+  </figure>
+</section>
+<section class="context-section page-width" id="about" aria-label="About and latest news">
+  <div class="biography">
+    <h2 class="eyebrow">A little background</h2>
+    <div class="bio-copy">I am a first-year Ph.D. student in Robotics at Georgia Tech, advised by Prof. <a href="https://me.gatech.edu/faculty/zhao">Ye Zhao</a>. I received my M.S. in Electrical and Computer Engineering from UC San Diego, advised by Prof. <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>. I previously worked with Prof. <a href="https://faculty.cqu.edu.cn/FeiLiu/en/more/325595/jsjjgd/index.htm">Fei Liu</a> and Prof. <a href="https://mypage.cuhk.edu.cn/academics/yutianshu/">Tianshu Yu</a>. I am interested in building practical and deployable robotic systems that bridge research and real-world industrial applications.</div>
+    <div class="profile-connections">
       
-
-<div class="publication-card publication-card--video">
-  <div class="publication-image publication-image--video">
-    
-<video autoplay loop muted playsinline class="pub-media">
-  <source src="/videos/FACT_teaser.mp4" type="video/mp4">
-</video>
-
-
+      <a href="https://scholar.google.com/citations?user=8TytuLgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/jerryyan24" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      <a href="https://twitter.com/Hi_Im_RuiYan" target="_blank" rel="noopener">Twitter <span aria-hidden="true">↗</span></a>
+      
+      
+    </div>
   </div>
-  <div class="publication-info">
-    <h3 class="publication-title">FACT: Failure-Aware Causal Training for World-Action Models</h3>
-    <p class="publication-authors">Quanquan Peng*, Yutong Liang*, <strong>Rui Yan</strong>, Nicklas Hansen, Xiaolong Wang</p>
+  <div class="latest-news">
+    <h2 class="eyebrow">Latest news</h2>
+    <ul class="news-list">
+      
+      <li>
+        <span class="entry-date">Aug 2026</span>
+        <div>Started my Ph.D. in Robotics at <a href="https://www.gatech.edu">Georgia Tech</a>, advised by Prof. <a href="https://me.gatech.edu/faculty/zhao">Ye Zhao</a>.</div>
+      </li>
+      
+      <li>
+        <span class="entry-date">Jun 2025</span>
+        <div>Gave a talk and presented a demo at the <a href="https://rss-hardware-intelligence.github.io">1st RSS Workshop on Robot Hardware-Aware Intelligence</a>.</div>
+      </li>
+      
+      <li>
+        <span class="entry-date">Nov 2024</span>
+        <div>Started my M.S. in Electrical and Computer Engineering at <a href="https://ucsd.edu">UC San Diego</a>.</div>
+      </li>
+      
+      <li>
+        <span class="entry-date">Jun 2024</span>
+        <div>Graduated from <a href="https://cqu.edu.cn">Chongqing University</a>.</div>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+<section class="research-section" id="publications" aria-labelledby="research-title">
+  <div class="page-width">
+    <div class="chapter-heading">
+      <div><p class="eyebrow">Learning. Manipulation. Interaction.</p><h2 id="research-title">Publications.</h2></div>
+      <a class="text-action" href="https://scholar.google.com/citations?user=8TytuLgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="research-list">
+      
+      
+<article class="research-item">
+  <div class="research-media">
     
-    <p class="publication-conference">Conference on Robot Learning (CoRL 2026)</p>
+    <video class="pub-media" controls loop muted playsinline preload="none" width="1920" height="1080" aria-label="FACT: Failure-Aware Causal Training for World-Action Models — research demonstration" poster="/images/research/fact.jpg">
+      <source src="/videos/FACT_teaser.mp4" type="video/mp4">
+    </video>
+    <button class="media-toggle" type="button" hidden aria-label="Play demonstration: FACT: Failure-Aware Causal Training for World-Action Models">Play</button>
+    
+  </div>
+  <div class="research-copy">
+    <p class="research-venue"><span class="latest-label">Latest publication</span>Conference on Robot Learning (CoRL 2026)</p>
+    <h3>FACT: Failure-Aware Causal Training for World-Action Models</h3>
+    <p class="research-authors">Quanquan Peng*, Yutong Liang*, <strong>Rui Yan</strong>, Nicklas Hansen, Xiaolong Wang</p>
     
     
 
@@ -152,19 +148,19 @@
 <div class="publication-links">
   
     
-    <a href="https://fact-wam.github.io/" target="_blank" class="pub-link webpage">
+    <a href="https://fact-wam.github.io/" target="_blank" rel="noopener" class="pub-link webpage">
       <span>Website</span>
     </a>
     
   
     
-    <a href="https://arxiv.org/abs/2608.10232" target="_blank" class="pub-link arxiv" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/abs/2608.10232" target="_blank" rel="noopener" class="pub-link arxiv" onclick="event.stopPropagation();">
       <span>arXiv</span>
     </a>
     
   
     
-    <a href="https://github.com/Bariona/FACT" target="_blank" class="pub-link github" onclick="event.stopPropagation();">
+    <a href="https://github.com/Bariona/FACT" target="_blank" rel="noopener" class="pub-link github" onclick="event.stopPropagation();">
       <span>GitHub</span>
     </a>
     
@@ -172,7 +168,7 @@
     
   
     
-    <a href="https://arxiv.org/pdf/2608.10232" target="_blank" class="pub-link pdf" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/pdf/2608.10232" target="_blank" rel="noopener" class="pub-link pdf" onclick="event.stopPropagation();">
       <span>PDF</span>
     </a>
     
@@ -180,25 +176,23 @@
 </div>
 
   </div>
-</div>
+</article>
 
-    
       
-
-<div class="publication-card publication-card--video">
-  <div class="publication-image publication-image--video">
+      
+<article class="research-item">
+  <div class="research-media">
     
-<video autoplay loop muted playsinline class="pub-media">
-  <source src="/videos/LoHoManip_teaser.mp4" type="video/mp4">
-</video>
-
-
+    <video class="pub-media" controls loop muted playsinline preload="none" width="1920" height="1080" aria-label="Long-Horizon Manipulation via Trace-Conditioned VLA Planning — research demonstration" poster="/images/research/loho.jpg">
+      <source src="/videos/LoHoManip_teaser.mp4" type="video/mp4">
+    </video>
+    <button class="media-toggle" type="button" hidden aria-label="Play demonstration: Long-Horizon Manipulation via Trace-Conditioned VLA Planning">Play</button>
+    
   </div>
-  <div class="publication-info">
-    <h3 class="publication-title">Long-Horizon Manipulation via Trace-Conditioned VLA Planning</h3>
-    <p class="publication-authors">Isabella Liu, An-Chieh Cheng, <strong>Rui Yan</strong>, Geng Chen, Ri-Zhao Qiu, Xueyan Zou, Sha Yi, Hongxu Yin, Xiaolong Wang, Sifei Liu</p>
-    
-    <p class="publication-conference">Conference on Robot Learning (CoRL 2026)</p>
+  <div class="research-copy">
+    <p class="research-venue">Conference on Robot Learning (CoRL 2026)</p>
+    <h3>Long-Horizon Manipulation via Trace-Conditioned VLA Planning</h3>
+    <p class="research-authors">Isabella Liu, An-Chieh Cheng, <strong>Rui Yan</strong>, Geng Chen, Ri-Zhao Qiu, Xueyan Zou, Sha Yi, Hongxu Yin, Xiaolong Wang, Sifei Liu</p>
     
     
 
@@ -207,13 +201,13 @@
 <div class="publication-links">
   
     
-    <a href="https://www.liuisabella.com/LoHoManip/" target="_blank" class="pub-link webpage">
+    <a href="https://www.liuisabella.com/LoHoManip/" target="_blank" rel="noopener" class="pub-link webpage">
       <span>Website</span>
     </a>
     
   
     
-    <a href="https://arxiv.org/abs/2604.21924" target="_blank" class="pub-link arxiv" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/abs/2604.21924" target="_blank" rel="noopener" class="pub-link arxiv" onclick="event.stopPropagation();">
       <span>arXiv</span>
     </a>
     
@@ -223,7 +217,7 @@
     
   
     
-    <a href="https://arxiv.org/pdf/2604.21924" target="_blank" class="pub-link pdf" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/pdf/2604.21924" target="_blank" rel="noopener" class="pub-link pdf" onclick="event.stopPropagation();">
       <span>PDF</span>
     </a>
     
@@ -231,25 +225,23 @@
 </div>
 
   </div>
-</div>
+</article>
 
-    
       
-
-<div class="publication-card publication-card--video">
-  <div class="publication-image publication-image--video">
+      
+<article class="research-item">
+  <div class="research-media">
     
-<video autoplay loop muted playsinline class="pub-media">
-  <source src="/videos/HRC_video.mp4" type="video/mp4">
-</video>
-
-
+    <video class="pub-media" controls loop muted playsinline preload="none" width="1920" height="1080" aria-label="Human-Robot Copilot for Data-Efficient Imitation Learning — research demonstration" poster="/images/research/copilot.jpg">
+      <source src="/videos/HRC_video.mp4" type="video/mp4">
+    </video>
+    <button class="media-toggle" type="button" hidden aria-label="Play demonstration: Human-Robot Copilot for Data-Efficient Imitation Learning">Play</button>
+    
   </div>
-  <div class="publication-info">
-    <h3 class="publication-title">Human-Robot Copilot for Data-Efficient Imitation Learning</h3>
-    <p class="publication-authors"><strong>Rui Yan</strong>, Zaitian Gongye, Lars Paulsen, Xuxin Cheng, Xiaolong Wang</p>
-    
-    <p class="publication-conference">arXiv preprint</p>
+  <div class="research-copy">
+    <p class="research-venue">arXiv preprint</p>
+    <h3>Human-Robot Copilot for Data-Efficient Imitation Learning</h3>
+    <p class="research-authors"><strong>Rui Yan</strong>, Zaitian Gongye, Lars Paulsen, Xuxin Cheng, Xiaolong Wang</p>
     
     
 
@@ -260,7 +252,7 @@
     
   
     
-    <a href="https://arxiv.org/abs/2604.03613" target="_blank" class="pub-link arxiv" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/abs/2604.03613" target="_blank" rel="noopener" class="pub-link arxiv" onclick="event.stopPropagation();">
       <span>arXiv</span>
     </a>
     
@@ -270,7 +262,7 @@
     
   
     
-    <a href="https://arxiv.org/pdf/2604.03613" target="_blank" class="pub-link pdf" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/pdf/2604.03613" target="_blank" rel="noopener" class="pub-link pdf" onclick="event.stopPropagation();">
       <span>PDF</span>
     </a>
     
@@ -278,25 +270,23 @@
 </div>
 
   </div>
-</div>
+</article>
 
-    
       
-
-<div class="publication-card publication-card--video">
-  <div class="publication-image publication-image--video">
+      
+<article class="research-item">
+  <div class="research-media">
     
-<video autoplay loop muted playsinline class="pub-media">
-  <source src="/videos/Franka_Sim_Teleop.mp4" type="video/mp4">
-</video>
-
-
+    <video class="pub-media" controls loop muted playsinline preload="none" width="1920" height="1080" aria-label="ACE-F: A Cross Embodiment Foldable System with Force Feedback for Dexterous Teleoperation — research demonstration" poster="/images/research/ace-f.jpg">
+      <source src="/videos/Franka_Sim_Teleop.mp4" type="video/mp4">
+    </video>
+    <button class="media-toggle" type="button" hidden aria-label="Play demonstration: ACE-F: A Cross Embodiment Foldable System with Force Feedback for Dexterous Teleoperation">Play</button>
+    
   </div>
-  <div class="publication-info">
-    <h3 class="publication-title">ACE-F: A Cross Embodiment Foldable System with Force Feedback for Dexterous Teleoperation</h3>
-    <p class="publication-authors"><strong>Rui Yan</strong>, Jiajian Fu, Shiqi Yang, Lars Paulsen, Xuxin Cheng, Xiaolong Wang</p>
-    
-    <p class="publication-conference">Robotics: Science and Systems (RSS 2025) Workshop</p>
+  <div class="research-copy">
+    <p class="research-venue">Robotics: Science and Systems (RSS 2025) Workshop</p>
+    <h3>ACE-F: A Cross Embodiment Foldable System with Force Feedback for Dexterous Teleoperation</h3>
+    <p class="research-authors"><strong>Rui Yan</strong>, Jiajian Fu, Shiqi Yang, Lars Paulsen, Xuxin Cheng, Xiaolong Wang</p>
     
     
 
@@ -305,70 +295,19 @@
 <div class="publication-links">
   
     
-    <a href="https://acefoldable.github.io/" target="_blank" class="pub-link webpage">
+    <a href="https://acefoldable.github.io/" target="_blank" rel="noopener" class="pub-link webpage">
       <span>Website</span>
     </a>
     
   
     
-    <a href="https://arxiv.org/abs/2511.20887" target="_blank" class="pub-link arxiv" onclick="event.stopPropagation();">
+    <a href="https://arxiv.org/abs/2511.20887" target="_blank" rel="noopener" class="pub-link arxiv" onclick="event.stopPropagation();">
       <span>arXiv</span>
     </a>
     
   
     
-    <a href="https://github.com/ACEFoldable/acef_software" target="_blank" class="pub-link github" onclick="event.stopPropagation();">
-      <span>GitHub</span>
-    </a>
-    
-  
-    
-  
-    
-  
-</div>
-
-  </div>
-</div>
-
-    
-      
-
-<div class="publication-card publication-card--video">
-  <div class="publication-image publication-image--video">
-    
-<video autoplay loop muted playsinline class="pub-media">
-  <source src="/videos/EgoVLA_teaser.mp4" type="video/mp4">
-</video>
-
-
-  </div>
-  <div class="publication-info">
-    <h3 class="publication-title">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</h3>
-    <p class="publication-authors">Ruihan Yang, Qinxi Yu, Yecheng Wu, <strong>Rui Yan</strong>, Borui Li, An-Chieh Cheng, Xueyan Zou, Yunhao Fang, Hongxu Yin, Sifei Liu, Song Han, Yao Lu, Xiaolong Wang</p>
-    
-    <p class="publication-conference">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)</p>
-    
-    
-
-
-
-<div class="publication-links">
-  
-    
-    <a href="https://rchalyang.github.io/EgoVLA/" target="_blank" class="pub-link webpage">
-      <span>Website</span>
-    </a>
-    
-  
-    
-    <a href="https://arxiv.org/abs/2507.12440" target="_blank" class="pub-link arxiv" onclick="event.stopPropagation();">
-      <span>arXiv</span>
-    </a>
-    
-  
-    
-    <a href="https://github.com/RchalYang/EgoVLA_Release" target="_blank" class="pub-link github" onclick="event.stopPropagation();">
+    <a href="https://github.com/ACEFoldable/acef_software" target="_blank" rel="noopener" class="pub-link github" onclick="event.stopPropagation();">
       <span>GitHub</span>
     </a>
     
@@ -380,32 +319,23 @@
 </div>
 
   </div>
-</div>
+</article>
 
-    
-  </div>
-</div>
-
-
-
-<div class="projects-section">
-  <h2 class="section-title">Selected Projects</h2>
-  <div class="projects-grid">
-    
       
-
-<div class="publication-card">
-  <div class="publication-image">
+      
+<article class="research-item">
+  <div class="research-media">
     
-<img src="/images/AttentionDepthMethod.png" alt="Attention-Driven Depth Fusion: Leveraging Focus and Single-Image Priors with Self-Cross Attention" class="pub-media">
-
-
+    <video class="pub-media" controls loop muted playsinline preload="none" width="1920" height="1080" aria-label="EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos — research demonstration" poster="/images/research/egovla.jpg">
+      <source src="/videos/EgoVLA_teaser.mp4" type="video/mp4">
+    </video>
+    <button class="media-toggle" type="button" hidden aria-label="Play demonstration: EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos">Play</button>
+    
   </div>
-  <div class="publication-info">
-    <h3 class="publication-title">Attention-Driven Depth Fusion: Leveraging Focus and Single-Image Priors with Self-Cross Attention</h3>
-    <p class="publication-authors"><strong>Rui Yan</strong>, Zaitian Gongye</p>
-    
-    <p class="project-abstract">We propose an end-to-end model that fuses a single RGB image and its defocus map using attention mechanisms to estimate depth. Instead of handcrafted fusion, it uses self- and cross-attention for uncertainty-aware refinement.</p>
+  <div class="research-copy">
+    <p class="research-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)</p>
+    <h3>EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</h3>
+    <p class="research-authors">Ruihan Yang, Qinxi Yu, Yecheng Wu, <strong>Rui Yan</strong>, Borui Li, An-Chieh Cheng, Xueyan Zou, Yunhao Fang, Hongxu Yin, Sifei Liu, Song Han, Yao Lu, Xiaolong Wang</p>
     
     
 
@@ -414,7 +344,19 @@
 <div class="publication-links">
   
     
-    <a href="https://github.com/dkjlt/CrossDepth" target="_blank" class="pub-link github">
+    <a href="https://rchalyang.github.io/EgoVLA/" target="_blank" rel="noopener" class="pub-link webpage">
+      <span>Website</span>
+    </a>
+    
+  
+    
+    <a href="https://arxiv.org/abs/2507.12440" target="_blank" rel="noopener" class="pub-link arxiv" onclick="event.stopPropagation();">
+      <span>arXiv</span>
+    </a>
+    
+  
+    
+    <a href="https://github.com/RchalYang/EgoVLA_Release" target="_blank" rel="noopener" class="pub-link github" onclick="event.stopPropagation();">
       <span>GitHub</span>
     </a>
     
@@ -422,13 +364,53 @@
     
   
     
-    <a href="https://jerryyan24.github.io/papers/Attention-Driven%20Depth%20Fusion.pdf" target="_blank" class="pub-link pdf">
+  
+</div>
+
+  </div>
+</article>
+
+      
+    </div>
+  </div>
+</section>
+
+<section class="project-chapter page-width" id="projects" aria-labelledby="projects-title">
+  <div class="chapter-heading"><div><p class="eyebrow">From ideas to systems</p><h2 id="projects-title">Selected projects.</h2></div></div>
+  
+<article class="research-item research-item--project">
+  <div class="research-media">
+    
+    <img class="pub-media" src="/images/AttentionDepthMethod.png" alt="Attention-Driven Depth Fusion: Leveraging Focus and Single-Image Priors with Self-Cross Attention — method overview" loading="lazy">
+    
+  </div>
+  <div class="research-copy">
+    
+    <h3>Attention-Driven Depth Fusion: Leveraging Focus and Single-Image Priors with Self-Cross Attention</h3>
+    <p class="research-authors"><strong>Rui Yan</strong>, Zaitian Gongye</p>
+    <p class="research-abstract">We propose an end-to-end model that fuses a single RGB image and its defocus map using attention mechanisms to estimate depth. Instead of handcrafted fusion, it uses self- and cross-attention for uncertainty-aware refinement.</p>
+    
+
+
+
+<div class="publication-links">
+  
+    
+    <a href="https://github.com/dkjlt/CrossDepth" target="_blank" rel="noopener" class="pub-link github">
+      <span>GitHub</span>
+    </a>
+    
+  
+    
+  
+    
+    <a href="https://jerryyan24.github.io/papers/Attention-Driven%20Depth%20Fusion.pdf" target="_blank" rel="noopener" class="pub-link pdf">
       <span>PDF</span>
     </a>
     
   
     
-    <a href="https://jerryyan24.github.io/videos/AttentionDepth.mp4" target="_blank" class="pub-link video">
+    <a href="https://jerryyan24.github.io/videos/AttentionDepth.mp4" target="_blank" rel="noopener" class="pub-link video">
       <span>Video</span>
     </a>
     
@@ -436,78 +418,64 @@
 </div>
 
   </div>
-</div>
+</article>
 
-    
-  </div>
-</div>
+</section>
 
-
-<div class="experience-section">
-  <h2 class="section-title">Work Experience</h2>
-  <div class="experience-grid">
+<section id="experience" class="credentials-chapter" aria-labelledby="credentials-title">
+<div class="page-width">
+  <div class="chapter-heading"><div><p class="eyebrow">Beyond the publications</p><h2 id="credentials-title">Experience &amp; service.</h2></div></div>
+<div class="credentials">
+  <section aria-labelledby="experience-title">
+    <h3 id="experience-title" class="credentials-title">Work experience</h3>
     
-    <div class="experience-item">[Jun 2023 - Dec 2023] Research Assistant at <a href="https://www.cuhk.edu.cn/en">CUHKSZ</a>, advised by Prof. <a href="https://mypage.cuhk.edu.cn/academics/yutianshu/">Tianshu Yu</a></div>
-    
-    <div class="experience-item">[Jul 2021 - Aug 2021] Robot Engineer at NinboX Institute</div>
-    
-  </div>
-</div>
-
-<div class="services-section">
-  <h2 class="section-title">Academic Services</h2>
-  <div class="services-grid">
-    
-    <div class="service-category">
-      <h3 class="service-title">Conference Attendee</h3>
-      <div class="service-item">CES 2026, Las Vegas</div><div class="service-item">CES 2025, Las Vegas</div><div class="service-item"><a href="https://roboticsconference.org">RSS 2025</a>, Los Angeles, California | Wednesday, June 25th, 2025</div>
+    <div class="experience-entry">
+      
+      <p class="entry-date">Jun 2023 - Dec 2023</p>
+      <div>Research Assistant at <a href="https://www.cuhk.edu.cn/en">CUHKSZ</a>, advised by Prof. <a href="https://mypage.cuhk.edu.cn/academics/yutianshu/">Tianshu Yu</a></div>
     </div>
     
-    <div class="service-category">
-      <h3 class="service-title">Journal Reviewer</h3>
-      <div class="service-item">Currently NA</div>
+    <div class="experience-entry">
+      
+      <p class="entry-date">Jul 2021 - Aug 2021</p>
+      <div>Robot Engineer at NinboX Institute</div>
     </div>
     
-  </div>
+  </section>
+  <section aria-labelledby="services-title">
+    <h3 id="services-title" class="credentials-title">Academic services</h3>
+    
+    <div class="service-entry"><h4>Conference Attendee</h4>
+      <ul><li>CES 2026, Las Vegas</li><li>CES 2025, Las Vegas</li><li><a href="https://roboticsconference.org">RSS 2025</a>, Los Angeles, California | Wednesday, June 25th, 2025</li></ul>
+    </div>
+    
+    <div class="service-entry"><h4>Journal Reviewer</h4>
+      <ul><li>Currently NA</li></ul>
+    </div>
+    
+  </section>
 </div>
+</div>
+</section>
+<section id="contact" class="contact-chapter page-width" aria-labelledby="contact-title">
+  <div><p class="eyebrow">Rui Yan · Georgia Tech</p><h2 id="contact-title">Let’s connect.</h2></div>
+  <div class="contact-details"><a href="mailto:ryan91@gatech.edu">ryan91@gatech.edu <span aria-hidden="true">↗</span></a><p>Office · GTMI 377</p>
+    <div class="contact-socials"><a href="https://scholar.google.com/citations?user=8TytuLgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a><a href="https://github.com/jerryyan24" target="_blank" rel="noopener">GitHub ↗</a></div>
+  </div>
+</section>
 
+<script src="/js/home-media.8eaaa15e8e77840e0cc3385ff31360f53cf6c01b0910f8a921081f7f5e9c49cd.js" defer></script>
 
+</main>
 
     
-    <div class="footer-main ">
-  <div class="content-body footer-wraper">
-    <div class="footer-box">
-      <div class="foot-nav">
-        <div class="foot-nav-items">
-          <div class="item">
-            <div class="logo"></div>
-            <div class="email">Email: <a href="mailto:ryan91@gatech.edu">ryan91@gatech.edu</a></div>
-          </div>
-
-          <div class="item community">
-            <div class="item-title">Social Media</div>
-            
-              <a href="https://github.com/jerryyan24" target="_blank">Github</a>
-            
-          </div>
-
-          <div class="item resources">
-            <div class="item-title">Friend Link</div>
-            
-              <a href="https://www.doodledu22.com/" target="_blank">doodledu22</a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="item copyright">
-          &copy; 2026
-          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://github.com/floyd-li/hugo-theme-itheme" target="_blank">iTheme</a> & <a href="https://github.com/jerryyan24" target="_blank">Jerry</a>
-        </div>
-      </div>
-    </div>
+    <footer class="home-footer">
+  <div class="page-width">
+    <span>© 2026 Rui Yan</span>
+    <span>Robotics · Georgia Tech</span>
+    <a href="#main-content">Back to top <span aria-hidden="true">↑</span></a>
   </div>
-</div>
+</footer>
 
 
     
